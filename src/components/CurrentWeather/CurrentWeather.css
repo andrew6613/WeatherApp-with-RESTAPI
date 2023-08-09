@@ -1,0 +1,38 @@
+.wrapper {
+  width: 400px;
+  height: 250px;
+  background-color: #393839;
+  color: white;
+  margin-top: 40px;
+  border-radius: 6px;
+  padding: 20px;
+  opacity: 90%;
+}
+
+.main,
+.description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.city {
+  padding-left: 20px;
+}
+
+.city > p:nth-child(1) {
+  font-weight: bold;
+  font-size: 25px;
+  padding-bottom: 5px;
+}
+
+.temperature {
+  font-size: 90px;
+  font-weight: bold;
+  line-height: 70px;
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 150px;
+}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
+import "../Search/SearchLocation.css";
 
 const url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities";
 const options = {
@@ -40,7 +41,7 @@ const SearchLocation = () => {
   };
 
   return (
-    <div>
+    <div className="search">
       <AsyncPaginate
         placeholder="Type name of the city"
         onChange={handleCity}
