@@ -11,11 +11,12 @@ const options = {
   },
 };
 
-const SearchLocation = () => {
+const SearchLocation = ({ getCoordinates }) => {
   const [cityName, setCityName] = useState(null);
 
   const handleCity = (searhValue) => {
     setCityName(searhValue);
+    getCoordinates(searhValue);
   };
 
   const loadOptions = (inputValue) => {

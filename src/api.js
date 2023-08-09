@@ -5,3 +5,5 @@ export const options = {
     "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
   },
 };
+
+export const API_key = "30f12c7b2a1183188531cf086319b7c2";
