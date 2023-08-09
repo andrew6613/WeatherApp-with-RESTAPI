@@ -17,11 +17,23 @@ const SearchLocation = () => {
     setCityName(searhValue);
   };
 
-  const loadOptions = async (inputValue) => {
+  const loadOptions = (inputValue) => {
     try {
-      const response = await fetch(`${url}?namePrefix=${inputValue}`, options);
-      const result = await response.text();
-      return result;
+      return fetch(
+        `${url}?minPopulation=500000&namePrefix=${inputValue}`,
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => {
+          return {
+            options: response.data.map((city) => {
+              return {
+                coordinates: `${city.longitude} ${city.latitude}`,
+                label: `${city.name} ${city.countryCode}`,
+              };
+            }),
+          };
+        });
     } catch (error) {
       console.error(error);
     }
