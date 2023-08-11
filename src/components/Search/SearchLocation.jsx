@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import "../Search/SearchLocation.css";
-
-const url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities";
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "4f84fcf7fdmsh4401051b2f7c3c1p198930jsn82c269422098",
-    "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
-  },
-};
+import { options, URL_GEO_CITIES } from "../../api";
 
 const SearchLocation = ({ getCoordinates }) => {
   const [cityName, setCityName] = useState(null);
@@ -22,7 +14,7 @@ const SearchLocation = ({ getCoordinates }) => {
   const loadOptions = (inputValue) => {
     try {
       return fetch(
-        `${url}?minPopulation=500000&namePrefix=${inputValue}`,
+        `${URL_GEO_CITIES}?minPopulation=500000&namePrefix=${inputValue}`,
         options
       )
         .then((response) => response.json())
@@ -47,7 +39,7 @@ const SearchLocation = ({ getCoordinates }) => {
         placeholder="Type name of the city"
         onChange={handleCity}
         value={cityName}
-        debounceTimeout={600}
+        debounceTimeout={900}
         loadOptions={loadOptions}
       />
     </div>
