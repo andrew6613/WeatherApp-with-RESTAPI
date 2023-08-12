@@ -14,7 +14,7 @@ const SearchLocation = ({ getCoordinates }) => {
   const loadOptions = (inputValue) => {
     try {
       return fetch(
-        `${URL_GEO_CITIES}?minPopulation=500000&namePrefix=${inputValue}`,
+        `${URL_GEO_CITIES}&minPopulation=500000&namePrefix=${inputValue}`,
         options
       )
         .then((response) => response.json())
@@ -41,6 +41,7 @@ const SearchLocation = ({ getCoordinates }) => {
         value={cityName}
         debounceTimeout={900}
         loadOptions={loadOptions}
+        defaultAdditional="Moscow"
       />
     </div>
   );

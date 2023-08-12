@@ -1,12 +1,13 @@
 .wrapper {
-  width: 400px;
-  height: 250px;
+  width: 450px;
+  height: 220px;
   background-color: #393839;
   color: white;
   margin-top: 40px;
   border-radius: 6px;
   padding: 20px;
   opacity: 90%;
+  margin-bottom: 40px;
 }
 
 .main,
@@ -30,5 +31,9 @@
   padding: 0;
 }
 img {
-  width: 150px;
+  width: 120px;
+}
+
+.details {
+  font-size: 17px;
 }
