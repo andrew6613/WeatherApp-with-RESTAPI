@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./DayForecast.css";
 import HourForecast from "../HourForecast/HourForecast";
 
-const DayForecast = ({ data, day }) => {
+const DayForecast = ({ day, dataPart }) => {
   const [open, setOpen] = useState(false);
   const clickHandler = () => {
     setOpen(!open);
@@ -14,7 +14,7 @@ const DayForecast = ({ data, day }) => {
       </button>
       <div className={`df_body_collapse${open ? "open" : ""}`}>
         <div className="df_body">
-          {data.map((el, idx) => (
+          {dataPart.map((el, idx) => (
             <li key={idx}>{<HourForecast forecastData={el} />}</li>
           ))}
         </div>
